@@ -117,6 +117,7 @@ const requestMaps = floorList => dispatch => new Promise((resolve, reject) => {
     apiClientCMX.get(`/api/config/v1/maps/imagesource/${floor.image.imageName}`,
       { responseType: 'arraybuffer' })
       .then(response => {
+        console.debug('response!!!!!!!', response)
         const base64 = btoa(
           new Uint8Array(response.data).reduce(
             (data, byte) => data + String.fromCharCode(byte),
@@ -145,7 +146,8 @@ export const getAllMaps = () => dispatch => new Promise((resolve, reject) => {
     '/api/config/v1/maps',
   )
     .then(response => {
-      const floorList = getNestedObject(response.data, ['campuses', 2, 'buildingList', 0, 'floorList'])
+      const floorList = getNestedObject(response.data, ['campuses', 1, 'buildingList', 0, 'floorList'])
+      console.log('floorList', response.data)
       const filteredFloorList = floorList.filter(floor => floor.image && floor.image.imageName)
       dispatch(requestMaps(filteredFloorList))
         .catch(err => {

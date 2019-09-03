@@ -59,7 +59,11 @@ class FloorMap extends Component {
 
   componentDidMount() {
     if (!this.state.currentFloor) {
-      this.props.getAllMaps().catch(err => {
+      this.props.getAllMaps()
+      .then(res => {
+        console.log('maps res!!!!!', res)
+      })
+      .catch(err => {
         message.error(`An error occured while trying to fetch maps: ${err}`)
       })
     }

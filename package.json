@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/d-spiridonov/ccmn.git"
+    "url": "git+https://github.com/mkaliberda/ccmn.git"
   },
   "keywords": [
     "ccmn",
@@ -19,7 +19,7 @@
     "unit",
     "factory"
   ],
-  "author": "Dmitry Spiridonov",
+  "author": "Dmitry Spiridonov & Maksym Kaliberda",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/d-spiridonov/ccmn/issues"
